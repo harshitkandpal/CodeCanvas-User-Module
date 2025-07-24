@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function App() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("dark"); // Default theme is dark, type declaration added <"light" | "dark">
 
   React.useEffect(() => {
     document.documentElement.className = theme;
@@ -10,7 +10,7 @@ function App() {
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
-
+  
   return (
     <>
       <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-4">
