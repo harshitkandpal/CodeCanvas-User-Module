@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {Button} from "@/components/ui/button";
+
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">("dark"); // Default theme is dark, type declaration added <"light" | "dark">
@@ -14,12 +16,12 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-4">
-        <button
+        <Button
           onClick={toggleTheme}
           className="mb-6 px-4 py-2 rounded bg-accent text-accent-foreground font-medium shadow"
         >
           Switch to {theme === "light" ? "Dark" : "Light"} Theme
-        </button>
+        </Button>
         <h1 className="text-4xl font-bold mb-4 font-display">Welcome to CodeCanvas</h1>
         <p className="text-lg mb-8 text-center max-w-xl">
           Your one-stop solution for all coding needs.
