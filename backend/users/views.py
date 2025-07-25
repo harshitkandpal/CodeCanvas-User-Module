@@ -9,3 +9,5 @@ from rest_framework.decorators import api_view
 def hello(request):
     return Response({"message": "Hello World"})
     
+
+# register login logout
