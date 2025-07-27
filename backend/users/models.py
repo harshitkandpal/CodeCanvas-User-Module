@@ -27,28 +27,6 @@ class Users(models.Model):
     def __str__(self):
         return f"{self.email} | {self.username} | is_valid: {self.is_valid} | is_active: {self.is_active} | last_login: {self.last_login}"
     
-class Otp(models.Model):
-    email = models.OneToOneField(Users, on_delete=models.CASCADE)
-    otp = models.CharField(max_length=8,null=False,unique=True)
-    expires_at = models.DateTimeField(null=False)
-    created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.email}"
-
-class JwtTokens(models.Model):
-    user = models.OneToOneField(Users,on_delete=models.CASCADE)
-    refresh_token = models.CharField(max_length=255, null=False)
-    user_agent = models.CharField(max_length=255)
-    ip_address = models.GenericIPAddressField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    expires_at = models.DateTimeField()
-    is_revoked = models.BooleanField(default=False)
-    updated_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.user} | {self.refresh_token} | {self.ip_address}"
 
 class DeveloperProfile(models.Model):
     user =  models.OneToOneField(Users, on_delete=models.CASCADE)

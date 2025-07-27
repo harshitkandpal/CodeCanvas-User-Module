@@ -10,10 +10,15 @@ class RegistrationSerializer(serializers.ModelSerializer):
             'profile_pic': {'default': 'my-dummy-profile_pic-urls'},
         }
 
-        def validate_password(self, value):
-            if len(value)<8:
-                raise serializers.ValidationError("Password must be at least 8 characters long.")
-            return value
+    def validate_password(self, value):
+        if len(value)<8:
+            raise serializers.ValidationError("Password must be at least 8 characters long.")
+        return value
+        
+class EmailVerificationSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    otp = serializers.CharField(required=False, max_length=10)
+
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
@@ -30,3 +35,6 @@ class LoginSerializer(serializers.Serializer):
         
         data['user'] = user
         return data
+
+class LogoutSerializer(serializers.Serializer):
+    refresh = serializers.CharField()
