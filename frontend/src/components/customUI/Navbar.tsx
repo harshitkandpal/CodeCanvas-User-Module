@@ -11,7 +11,7 @@ export const Navbar : React.FC = () => {
     return (
         <nav className="flex px-2 justify-center items-center bg-secondary text-foreground">
             <div className="w-24 flex justify-around items-center">
-                <div>item</div>
+                {isLoggedIn && <div>item</div>}
                 <Link to="/"><img src={logo} alt="CodeCanvas Logo" className="w-12 h-12" /></Link>
             </div>
             <div className="grow"></div>

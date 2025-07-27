@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import { Register } from "./pages/register/Register";
 import { Login } from "./pages/login/Login";
-
+import { Community } from "./pages/community/Community";
 
 function App() {
   
@@ -21,6 +21,7 @@ function App() {
         }
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element = {<Login/>}/>
+      <Route path="/community" element = {<Community/>}/>
       </Routes>
 
 
