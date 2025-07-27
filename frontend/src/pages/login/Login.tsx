@@ -16,7 +16,7 @@ export const Login: (React.FC) = () => {
 
     return(
         <div className="w-full min-h-[94.8vh] bg-background flex justify-center items-center">
-            <Card className="w-full max-w-sm h-100 bg-secondary text-secondary-foreground shadow">
+            <Card className="w-full max-w-sm bg-secondary text-secondary-foreground shadow">
                 <CardHeader>
                     <CardTitle>Login Into CodeCanvas</CardTitle>
                     <CardDescription>
