@@ -6,7 +6,7 @@ export const HomePage : React.FC = () => {
 
     return (
         <div>
-            <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-4">
+            <div className="min-h-[94.8vh] bg-background text-foreground flex flex-col items-center justify-center px-4">
         
      
         <h1 className="text-4xl font-bold mb-4 font-display">Welcome to CodeCanvas</h1>

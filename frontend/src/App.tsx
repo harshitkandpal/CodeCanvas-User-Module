@@ -12,19 +12,19 @@ function App() {
   const {isLoggedIn} = useAuth();
   
   return (
-    <>
+    <div className="min-h-screen">
       <Navbar/>
       <Routes>
         {isLoggedIn ? 
           <Route path="/" element={<HomePageLoggedIn/>}/> : 
           <Route path="/" element={<HomePage/>}/>
         }
-      <Route path="/Register" element={<Register/>}/>
+      <Route path="/register" element={<Register/>}/>
       <Route path="/login" element = {<Login/>}/>
       </Routes>
 
 
-    </>
+    </div>
 
   );
 }
