@@ -3,8 +3,8 @@ import { HomePage } from "./pages/home/HomePage";
 import { HomePageLoggedIn } from "./pages/home/HomePageLoggedIn";
 import { Routes, Route } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
-import { Register } from "./pages/register/Register";
-import { Login } from "./pages/login/Login";
+import { RegistrationPage } from "./pages/register/page";
+import { LoginPage } from "./pages/login/page";
 import { Community } from "./pages/community/Community";
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
           <Route path="/" element={<HomePageLoggedIn/>}/> : 
           <Route path="/" element={<HomePage/>}/>
         }
-      <Route path="/register" element={<Register/>}/>
-      <Route path="/login" element = {<Login/>}/>
+      <Route path="/register" element={<RegistrationPage/>}/>
+      <Route path="/login" element = {<LoginPage/>}/>
       <Route path="/community" element = {<Community/>}/>
       </Routes>
 

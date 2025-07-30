@@ -3,13 +3,12 @@ import { ThemeToggleButton } from "./ThemeToggleButton"
 import { Link } from "react-router-dom"
 import { useAuth } from "@/context/AuthContext"
 import logo from "@/assets/main.svg"
-import { Button } from "../ui/button"
 
 export const Navbar : React.FC = () => {
     const {isLoggedIn} = useAuth()
 
     return (
-        <nav className="flex px-2 justify-center items-center bg-secondary text-foreground">
+        <nav className="flex px-2 justify-center items-center bg-background text-foreground border-2">
             <div className="w-24 flex justify-around items-center">
                 {isLoggedIn && <div>item</div>}
                 <Link to="/"><img src={logo} alt="CodeCanvas Logo" className="w-12 h-12" /></Link>
