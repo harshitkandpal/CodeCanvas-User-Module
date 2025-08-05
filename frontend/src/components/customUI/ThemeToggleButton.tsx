@@ -6,7 +6,6 @@ export const ThemeToggleButton : React.FC = () => {
     return(
         
         <div
-            className="bg-secondary" 
             onClick={toggleTheme}>
             {theme === "light"?<Sun size={24} strokeWidth={1} className=""/>:<SunMoon size={24} strokeWidth={1} className=""/>}
         </div>
