@@ -17,7 +17,7 @@ function App() {
       <Routes>
         {isLoggedIn ? 
           <Route path="/" element={<HomePageLoggedIn/>}/> :
-          <Route path="/" element={<HomePage/>}/> 
+          <Route path="/" element={<HomePageLoggedIn/>}/> 
         }
       <Route path="/register" element={<RegistrationPage/>}/>
       <Route path="/login" element = {<LoginPage/>}/>

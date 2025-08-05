@@ -4,10 +4,24 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+interface RegistrationFormProps extends React.ComponentProps<"div"> {
+  setOtpSent: (value: boolean) => void;
+}
+
 export function RegistrationForm({
   className,
+  setOtpSent,
   ...props
-}: React.ComponentProps<"div">) {
+}: RegistrationFormProps) {
+
+  // Handle form submission
+  const handleSubmit = (event: React.FormEvent) =>{
+    event.preventDefault()
+    // will add the form submission logic here later
+    setOtpSent(true)
+    console.log("Registration Form submitted")
+  }
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0">
@@ -48,7 +62,7 @@ export function RegistrationForm({
                 </div>
                 <Input id="password" type="password" required />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" onClick={handleSubmit} className="w-full">
                 Login
               </Button>
               <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
